@@ -46,4 +46,7 @@ docker run -d -it --name people-name-coding-test <username>/people-name-coding-t
 
 ## Running unit tests
 
-`npm run test`
+```
+npm install
+npm run test
+```
