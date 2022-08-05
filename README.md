@@ -1,14 +1,14 @@
 # People Name Coding Test
 
 ###### Prerequisites
-- Node.js v16 LTS
+Node.js v16 LTS or Docker v20 LTS
 
-## Running locally
+## Running locally (Node.js)
 To run the script using the default input data file you just need to run the command below
 
 `npm run start`
 
-### Set custom input data or N value
+### Set custom env values
 
 #### Linux, MacOS, Git Bash 
 
@@ -30,7 +30,7 @@ set N=35
 npm run start
 ```
 
-## Docker
+## Running locally (Docker)
 
 ###### Building and starting container
 ```
