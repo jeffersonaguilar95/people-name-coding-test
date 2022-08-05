@@ -30,6 +30,20 @@ set N=35
 npm run start
 ```
 
+## Docker
+
+###### Building and starting container
+```
+docker build . -t <username>/people-name-coding-test
+docker run -d -it --name people-name-coding-test <username>/people-name-coding-test
+```
+
+###### Running script with default env values
+`docker exec -it people-name-coding-test npm run start`
+
+###### Running script with custom env values
+`docker exec -it -e INPUT_FILE_NAME="your-custom-input-file.txt" -e N=35 people-name-coding-test npm run start`
+
 ## Running unit tests
 
 `npm run test`
