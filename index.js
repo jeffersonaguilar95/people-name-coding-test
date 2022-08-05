@@ -1,5 +1,4 @@
 const fs = require("fs");
-const readline = require("readline");
 
 const startTime = Date.now();
 const INPUT_FILE_NAME = process.env.INPUT_FILE_NAME || "coding-test-data.txt";
@@ -17,18 +16,13 @@ function main() {
   const filePath = `${__dirname}/${INPUT_FILE_NAME}`;
   const readableStream = fs.createReadStream(filePath, "utf8");
 
-  const readInterface = readline.createInterface({
-    input: readableStream,
-    console: false,
-  });
-
   return new Promise((resolve, reject) => {
-    readInterface.on("line", function (line) {
-      const regex = new RegExp(/^([a-zA-Z]+), ([a-zA-Z]+)/i);
-      const result = regex.exec(line);
+    readableStream.on("data", (chunk) => {
+      const regex = new RegExp(/^([a-zA-Z]+), ([a-zA-Z]+)/gm);
+      const matchedNames = chunk.matchAll(regex);
 
-      if (result) {
-        const [fullName, lastName, firstName] = result;
+      for (const matchedName of matchedNames) {
+        const [fullName, lastName, firstName] = matchedName;
         const {
           fullNamesMap,
           lastNamesMap,
@@ -52,7 +46,7 @@ function main() {
       }
     });
 
-    readInterface.on("close", async () => {
+    readableStream.on("end", async () => {
       // Returns an array with the top ten last names
       const topTenLastNames = getTopTenCommon(indexedResults.lastNamesMap);
       // Returns the top ten last names formatted for output
@@ -144,8 +138,7 @@ function buildOutput(topTenLastNamesFormatted, topTenFirstNamesFormatted) {
 2. The most common last names are:
 ${topTenLastNamesFormatted}
 3. The most common first names are:
-${topTenFirstNamesFormatted}
-`;
+${topTenFirstNamesFormatted}`;
 }
 
 module.exports = {
