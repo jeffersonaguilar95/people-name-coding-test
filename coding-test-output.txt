@@ -1,7 +1,7 @@
 1. The names cardinality for full, last, and first names:
-    Full names: 48432
-    Last names: 468
-    First names: 3007
+    Full names: 48429
+    Last names: 472
+    First names: 3010
 
 2. The most common last names are:
     Barton: 143 
@@ -26,4 +26,3 @@
     Kayley: 29 
     Dashawn: 29 
     Heath: 29 
-
