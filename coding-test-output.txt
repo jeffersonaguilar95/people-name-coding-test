@@ -1,0 +1,29 @@
+1. The names cardinality for full, last, and first names:
+    Full names: 48432
+    Last names: 468
+    First names: 3007
+
+2. The most common last names are:
+    Barton: 143 
+    Lang: 136 
+    Ortiz: 135 
+    Hilll: 134 
+    Hills: 130 
+    Terry: 129 
+    Becker: 128 
+    Johns: 128 
+    Romaguera: 128 
+    Batz: 127 
+
+3. The most common first names are:
+    Tara: 32 
+    Andreanne: 31 
+    Stephania: 31 
+    Keon: 31 
+    Kaycee: 30 
+    Milo: 29 
+    Charlotte: 29 
+    Kayley: 29 
+    Dashawn: 29 
+    Heath: 29 
+
